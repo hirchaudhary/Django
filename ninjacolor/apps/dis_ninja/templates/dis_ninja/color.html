@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja color</title>
+    </head>
+    <body style="text-align:center">
+        {% load staticfiles %}
+        {% if color == "red" %}
+            <img src="{% static "dis_ninja/images/raphael.jpg" %}" alt="All ninjas">
+    	{% elif color == "orange" %}
+            <img src="{% static "dis_ninja/images/michelangelo.jpg" %}" alt="All ninjas">
+    	{% elif color == "blue" %}
+            <img src="{% static "dis_ninja/images/leonardo.jpg" %}" alt="All ninjas">
+    	{% elif color == "purple" %}
+            <img src="{% static "dis_ninja/images/donatello.jpg" %}" alt="All ninjas">
+    	{% else %}
+            <img src="{% static "dis_ninja/images/notapril.jpg" %}" alt="All ninjas">
+        {% endif %}
+    </body>
+</html>

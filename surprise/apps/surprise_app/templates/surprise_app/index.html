@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Guess</title>
+        <style>
+            div{
+                width: 200px;
+                padding: 20px;
+                border: 2px solid black;
+                background-color: silver;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body style="text-align:center">
+        <div>
+            <h1>Surprise Me!</h1>
+            <form action="/guess" method="post">
+                {% csrf_token %}
+                <input type="number" name="guess" value="guess">
+                <input type="submit" value="Ready!">
+            </form>
+        </div>
+    </body>
+</html>

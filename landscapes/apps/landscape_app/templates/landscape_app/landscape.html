@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Landscape of the day</title>
+    </head>
+    <body style="text-align:center">
+        <h1>Your random image of the day:</h1>
+        {% load staticfiles %}
+        {% if number < 11 %}
+            <img src="{% static "landscape_app/images/snow.jpg" %}" alt="snow" width="500">
+        {% elif number < 21 %}
+            <img src="{% static "landscape_app/images/desert.jpg" %}" alt="desert" width="500">
+        {% elif number < 31 %}
+            <img src="{% static "landscape_app/images/forest.jpg" %}" alt="forest" width="500">
+        {% elif number < 41 %}
+            <img src="{% static "landscape_app/images/vineyard.jpg" %}" alt="vineyard" width="500">
+        {% elif number < 51 %}
+            <img src="{% static "landscape_app/images/tropical.jpg" %}" alt="tropical" width="500">
+        {% endif %}
+    </body>
+</html>

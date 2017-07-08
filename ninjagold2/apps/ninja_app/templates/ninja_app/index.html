@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja gold</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div class="wrapper">
+            <p>Your gold: {{request.session.gold}}</p>
+            <div class="box">
+                <h2>Farm</h2>
+                <form action="/process_money/farm" method="post" style="width:100px">
+                    {% csrf_token %}
+                    <input type="submit" name="farm" value="Farm">
+                </form>
+            </div>
+            <div class="box">
+                <h2>Cave</h2>
+                <form action="/process_money/cave" method="post" style="width:100px">
+                    {% csrf_token %}
+                    <input type="submit" name="cave" value="Cave">
+                </form>
+            </div>
+            <div class="box">
+                <h2>House</h2>
+                <form action="/process_money/house" method="post" style="width:100px">
+                    {% csrf_token %}
+                    <input type="submit" name="house" value="House">
+                </form>
+            </div>
+            <div class="box">
+                <h2>Casino</h2>
+                <form action="/process_money/casino" method="post" style="width:100px">
+                    {% csrf_token %}
+                    <input type="submit" name="casino" value="Casino">
+                </form>
+            </div>
+            <a href="/reset">Reset</a>
+            <h2>Activities</h2>
+            {% for activity in request.session.activities reversed %}
+                <p>{{ activity }}</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>

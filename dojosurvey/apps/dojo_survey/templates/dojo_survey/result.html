@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dojo Survey</title>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <blockquote>
+            Thanks for submitting the form! You have submitted this {{ request.session.count }} times.
+        </blockquote>
+        <p>Name: {{request.session.name}}</p>
+        <p>Location: {{request.session.location}}</p>
+        <p>Favorite Language: {{request.session.language}}</p>
+        <p>Comment: {{request.session.description}}</p>
+        <a href="/"><button>Go back</button></a>
+    </body>
+    </body>
+</html>

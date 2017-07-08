@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Confirm</title>
+    </head>
+    <body style="text-align:center">
+        <h1>Are you sure you want to delete the following course?</h1>
+        {% for course in courses %}
+        Name:           {{ course.name }}<br>
+        Description:    {{ course.description }}<br>
+        {% endfor %}
+        <button type="button" name="button"><a href="/" style="text-decoration:none">No</a></button>
+        <form action="/confirm/{{ request.session.id }}" method="post">
+            {% csrf_token %}
+            <input type="submit" name="delete" value="Yes! I want to delete this">
+        </form>
+    </body>
+</html>
